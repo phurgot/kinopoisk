@@ -1,0 +1,12 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title modal__title">Video</h1>
+    <button class="button button-right button-icon ion-ios-close" ng-click="topList.closeModal()"></button>
+  </ion-header-bar>
+  <ion-content>
+
+    <div class="video-box">
+      <video id="player" ng-src="{{topList.videoURL}}" class="centerme" controls="controls" autoplay></video>
+    </div>
+  </ion-content>
+</ion-modal-view>

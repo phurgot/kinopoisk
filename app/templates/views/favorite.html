@@ -1,0 +1,40 @@
+<ion-view>
+  <ion-header-bar align-title="center" class="bar-positive">
+    <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+    <h1 class="title">Favorite movies</h1>
+  </ion-header-bar>
+
+  <ion-content>
+    <ion-list>
+      <ion-item class="movie" ng-repeat="film in favoriteList.films">
+        <div class="row">
+          <div class="col col-33">
+            <img class="movie__poster" ng-src="{{::film.urlPoster}}" alt="{{::film.title }}">
+          </div>
+          <div class="col col-67">
+            <h2 class="movie__title" ng-bind="::film.title"></h2>
+            <p class="movie__label" ng-bind="::film.year"></p>
+            <p class="movie__label" ng-bind="::film.rating"></p>
+            <span class="movie__label">Genre:</span>
+            <ul class="movie__list">
+              <li class="movie__list-item"  ng-repeat="genre in ::film.genres" ng-bind="::genre"></li>
+            </ul>
+            <span class="movie__label">Country:</span>
+            <ul class="movie__list">
+              <li class="movie__list-item" ng-repeat="country in ::film.countries" ng-bind="::country"></li>
+            </ul>
+            <span class="movie__label">Director:</span>
+            <ul class="movie__list">
+              <li class="movie__list-item">
+                <a href="{{::'http://www.imdb.com/name/' + director.id}}" ng-repeat="director in ::film.directors" ng-bind="::director.name"></a>
+              </li>
+            </ul>
+            <button class="button button-full button-assertive"
+                    ng-click="favoriteList.deleteFilm(film.idIMDB)">It's no my favorite</button>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-view>
