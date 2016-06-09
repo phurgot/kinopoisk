@@ -47,6 +47,7 @@
     "yargs": "^3.31.0"
   },
   "scripts": {
+    "start": "npm i; bower i;",
     "gulp": "./node_modules/.bin/gulp"
   }
 }
